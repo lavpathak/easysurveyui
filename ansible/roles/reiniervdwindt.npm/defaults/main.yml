@@ -1,0 +1,4 @@
+---
+# Application
+application_name: "default"
+application_path: "/app/{{ application_name }}"

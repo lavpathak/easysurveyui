@@ -3,17 +3,11 @@
 - hosts: all
   sudo: True
   roles:
-    - role: SimpliField.npm
+    - role: reiniervdwindt.npm
     
   tasks:
-    - name: get httprouter package
-      shell: chdir=/home/vagrant/go/src/EasySurvey go get github.com/julienschmidt/httprouter
-      environment: 
-        PATH: $PATH:/usr/local/go/bin:/usr/bin
-        GOPATH: /home/vagrant/go
-
-    - name: run main.go
-      shell: chdir=/home/vagrant/go/src/EasySurvey nohup go run main.go &
-      environment: 
-        PATH: $PATH:/usr/local/go/bin:/usr/bin
-        GOPATH: /home/vagrant/go
+    - name: install babel
+      shell: npm install -g babel
+    
+    - name: install babel-cli
+      shell: npm install -g babel-cli

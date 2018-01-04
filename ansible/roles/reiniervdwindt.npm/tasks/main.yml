@@ -1,0 +1,8 @@
+---
+
+- name: "Install npm"
+  become: yes
+  apt: name="npm" state=installed
+
+- name: "Install node modules"
+  npm: path="{{ application_path }}" state="present" production="yes"
