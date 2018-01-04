@@ -1,0 +1,19 @@
+---
+# this playbook is entry point
+- hosts: all
+  sudo: True
+  roles:
+    - role: SimpliField.npm
+    
+  tasks:
+    - name: get httprouter package
+      shell: chdir=/home/vagrant/go/src/EasySurvey go get github.com/julienschmidt/httprouter
+      environment: 
+        PATH: $PATH:/usr/local/go/bin:/usr/bin
+        GOPATH: /home/vagrant/go
+
+    - name: run main.go
+      shell: chdir=/home/vagrant/go/src/EasySurvey nohup go run main.go &
+      environment: 
+        PATH: $PATH:/usr/local/go/bin:/usr/bin
+        GOPATH: /home/vagrant/go
