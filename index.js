@@ -1,27 +1,6 @@
-var webpack = require('webpack');
-var path = require('path');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = {
-    entry: [
-        path.join(__dirname, '../index.js')
-    ],
-	module: {
-		loaders: [{
-			test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader'
-			},{
-				test: /\.less$/,
-				loaders: ["style-loader", "css-loader", "less-loader"]
-			}
-		]
-	},
-    output: {
-        path: parentDir + '/dist',
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: parentDir,
-        historyApiFallback: true
-    }
-}
+import App from './App'
+
+ReactDOM.render(<App />, document.getElementById('app'))
