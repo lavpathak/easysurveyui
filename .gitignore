@@ -1,3 +1,4 @@
 .vagrant
 ansible/main.retry
 node_modules
+mockups
