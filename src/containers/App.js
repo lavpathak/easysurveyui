@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import MainLayout from './MainLayout';
 
 export default class App extends Component {
     render () {
-        return <p>Welcome to Easy Survey</p>
+        return (<MainLayout />);
     }
 }
