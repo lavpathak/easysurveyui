@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import MainHeader from './MainHeader';
+import ActiveSurveys from './ActiveSurveys';
 import {Grid} from 'semantic-ui-react';
 import '../styles.less';
 
 export default class MainLayout extends Component {
     render() {
         return (
-            <Grid container padded>
-                <Grid.Row className='header'>
+            <Grid padded>
+                <Grid.Row className='page-header'>
                     <MainHeader />
                 </Grid.Row>
-                <Grid.Row>
-                    <p>This is main layout of easy survey.</p>
+                <Grid.Row centered>
+                    <ActiveSurveys />
                 </Grid.Row>    
             </Grid>    
         );
