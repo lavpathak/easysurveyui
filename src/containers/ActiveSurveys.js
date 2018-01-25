@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Grid, Container, Header} from 'semantic-ui-react';
+import {List, Container, Header} from 'semantic-ui-react';
+import SurveyLine from '../components/SurveyLine';
 
 export default class ActiveSurvey extends Component {
 
@@ -20,18 +21,16 @@ export default class ActiveSurvey extends Component {
         const { surveys } = this.state;
 
         return (
-            <Grid padded>
-                <Grid.Row centered>
+            <List divided relaxed>
+                <List.Item centered>
                     <Container>
                         <Header as='h1'>Active Surveys</Header>
-                        <div>
-                            {surveys.map(survey =>
-                              <a href={survey.id}>{survey.name}</a>
-                          )}
-                        </div>
                     </Container>
-                </Grid.Row>
-            </Grid>
+                </List.Item>
+                {surveys.map(survey =>
+                    <SurveyLine {...survey} />
+                )}
+            </List>
         );
     }
 }
