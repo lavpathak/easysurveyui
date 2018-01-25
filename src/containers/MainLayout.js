@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MainHeader from './MainHeader';
+import MainHeader from '../components/MainHeader';
 import ActiveSurveys from './ActiveSurveys';
 import {Grid} from 'semantic-ui-react';
 import '../styles.less';
