@@ -2,3 +2,4 @@
 ansible/main.retry
 node_modules
 mockups
+npm-debug.log
